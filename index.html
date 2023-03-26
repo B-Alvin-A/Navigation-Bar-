@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar Styling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <ul>
+            <li class="item" style="--color: #3bff19;">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="item" style="--color: #ff1971;">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="fast-food-outline"></ion-icon>
+                    </span>
+                    <span class="title">Foods</span>
+                </a>
+            </li>
+            <li class="item" style="--color: #ffd919;">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="shirt-outline"></ion-icon>
+                    </span>
+                    <span class="title">Clothes</span>
+                </a>
+            </li>
+            <li class="item" style="--color: #c773ff;">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="bandage-outline"></ion-icon>
+                    </span>
+                    <span class="title">Medicine</span>
+                </a>
+            </li>
+            <li class="item" style="--color: #39bdff;">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </span>
+                    <span class="title">Cart</span>
+                </a>
+            </li>
+
+            <div class="highlight">
+                <ion-icon name="search-outline" class="glass-icon"></ion-icon>
+            </div>
+        </ul>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll(".item");
+
+        items.forEach((item, index) => {
+            item.addEventListener("click", ()=> {
+                for(let i=0; i<items.length ;i++){
+                    if(index == i){
+                        items[i].classList.add("active");
+                    }
+                    else{
+                        items[i].classList.remove("active");
+                    }
+                }
+            });
+        });
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
